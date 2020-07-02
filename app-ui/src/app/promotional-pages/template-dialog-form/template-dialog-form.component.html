@@ -1,0 +1,65 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-icon>help</mat-icon>
+  <div class="template__help" (click)="hasExamples = !hasExamples">
+    {{ hasExamples ? "Hide" : "Show" }} example template
+  </div>
+</div>
+<div *ngIf="hasExamples" class="example">
+  <button
+    mat-icon-button
+    class="example__copy-button"
+    [cdkCopyToClipboard]="exampleTemplate"
+  >
+    <mat-icon>content_copy</mat-icon>
+  </button>
+  <div class="example__text">
+    {{ exampleTemplate | unescape }}
+  </div>
+</div>
+<form class="template__form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="file-loader">
+    <input
+      class="file-loader__input"
+      type="file"
+      (change)="onFileChange($event)"
+      accept=".doc,.docx,.txt"
+      #file
+    />
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="file.click()"
+      type="button"
+    >
+      Load template from doc/docx/txt file
+    </button>
+  </div>
+  <mat-form-field appearance="outline" class="multi-line-error">
+    <mat-label>Template for the page</mat-label>
+    <textarea
+      required
+      matInput
+      cdkFocusInitial
+      formControlName="template"
+      rows="10"
+      name="page-template"
+    ></textarea>
+    <mat-error *ngIf="template.hasError('required')">
+      Set template
+    </mat-error>
+  </mat-form-field>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="error-message" *ngIf="errorMessage || templateError">
+      {{ errorMessage || templateError }}
+    </div>
+    <mat-spinner *ngIf="isSubmitting" [diameter]="20"></mat-spinner>
+    <button
+      mat-raised-button
+      class="button_submit"
+      color="accent"
+      type="submit"
+    >
+      Set template
+    </button>
+  </div>
+</form>

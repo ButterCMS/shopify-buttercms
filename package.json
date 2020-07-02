@@ -1,0 +1,38 @@
+{
+  "name": "e-commerce-butter-cms",
+  "version": "1.0.0",
+  "description": "Shopify app which integrates Shopify shop with ButterCMS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "buttercms": "^1.2.2",
+    "cookie": "^0.4.1",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "docxtemplater": "^3.17.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "json-stable-stringify": "^1.0.1",
+    "mustache": "^4.0.1",
+    "nonce": "^1.0.4",
+    "pizzip": "^3.0.6",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "shopify-api-node": "^3.3.2",
+    "shopify-hmac-validation": "^1.0.4",
+    "shopify-node-api": "^1.11.1",
+    "template-file": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2"
+  }
+}

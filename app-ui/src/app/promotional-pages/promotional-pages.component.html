@@ -1,0 +1,63 @@
+<div>
+  <h1>Promotional pages in ButterCMS</h1>
+  <div
+    *ngIf="pages | async as pagesList; else loadingOrError"
+    class="table__wrapper"
+  >
+    <table mat-table [dataSource]="pagesList.data" class="mat-elevation-z8">
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let element">
+          <img
+            mat-card-image
+            [src]="element.fields.twitter_card.image"
+            alt="Promotional page image"
+            class="page__image"
+          />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fields.seo.title }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">
+          <div [innerHTML]="element.fields.twitter_card.Description"></div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <div>
+            <button mat-raised-button (click)="createPage(element)">
+              Create page
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <ng-template #loadingOrError>
+    <div
+      *ngIf="!errorMessage; else errorLoading"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+    >
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+  </ng-template>
+  <ng-template #errorLoading>
+    <div class="error-message">
+      {{ errorMessage }}
+    </div>
+  </ng-template>
+</div>

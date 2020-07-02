@@ -1,0 +1,44 @@
+<h1 class="mat-h1">Configure ButterCMS</h1>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <mat-form-field appearance="outline" class="multi-line-error">
+    <mat-label>Write-enabled Token</mat-label>
+    <input
+      type="text"
+      required
+      matInput
+      cdkFocusInitial
+      formControlName="butterCMSWriteToken"
+      name="write-token"
+      maxlength="40"
+    />
+    <mat-hint align="end">
+      {{ butterCMSWriteToken.value.length }} / {{ tokenLength }}
+    </mat-hint>
+    <mat-error *ngIf="butterCMSWriteToken.hasError('required')">
+      Provide token
+    </mat-error>
+    <mat-error
+      *ngIf="
+        butterCMSWriteToken.hasError('minlength') ||
+        butterCMSWriteToken.hasError('maxlength')
+      "
+    >
+      Token must be 40 characters
+    </mat-error>
+  </mat-form-field>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <mat-spinner *ngIf="submittingForm" [diameter]="30" color="primary">
+    </mat-spinner>
+    <button
+      mat-raised-button
+      class="button_submit"
+      color="accent"
+      type="submit"
+    >
+      Save
+    </button>
+  </div>
+</form>

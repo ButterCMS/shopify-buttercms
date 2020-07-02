@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Set page template</h1>
+<mat-dialog-content class="mat-typography">
+  <promotional-pages-template-dialog-form
+    (formSubmitted)="onSubmitForm($event)"
+    [errorMessage]="errorMessage"
+    [isSubmitting]="isSubmitting"
+  ></promotional-pages-template-dialog-form>
+</mat-dialog-content>

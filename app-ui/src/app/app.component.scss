@@ -1,0 +1,32 @@
+@import "theme";
+
+.mat-drawer-container {
+  height: 100%;
+}
+
+.mat-drawer-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  padding: 20px;
+  flex: 1 1 auto;
+}
+
+.app__title {
+  display: block;
+  word-wrap: break-word;
+  width: 100%;
+  white-space: normal;
+}
+
+.mat-toolbar-row {
+  height: 100%;
+}
+
+.icon {
+  height: 150px;
+  width: 150px;
+  font-size: 150px;
+}

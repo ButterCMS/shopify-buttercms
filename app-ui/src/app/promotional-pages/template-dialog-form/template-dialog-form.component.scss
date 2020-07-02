@@ -1,0 +1,42 @@
+@import "theme";
+
+.mat-form-field {
+  width: 100%;
+}
+
+.example {
+  position: relative;
+}
+
+.example__copy-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.example__text {
+  width: 100%;
+  overflow: auto;
+  background: #fafafa;
+  padding: 10px;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+}
+
+.template__help {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.file-loader {
+  padding: 16px 0;
+}
+
+.file-loader__input {
+  display: none;
+}
+
+.button_submit {
+  margin-bottom: 20px;
+}

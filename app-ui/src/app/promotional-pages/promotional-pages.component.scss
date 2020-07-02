@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+
+.table__wrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+.page__image {
+  width: 100px;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 10px;
+}

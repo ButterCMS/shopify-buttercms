@@ -1,0 +1,24 @@
+@import "theme";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.notification_error {
+  background-color: mat-color($warn);
+}
+
+.notification_success {
+  background-color: mat-color($primary);
+}
+
+.error-message {
+  margin: 5px 0;
+  color: mat-color($warn);
+  word-break: break-word;
+}
